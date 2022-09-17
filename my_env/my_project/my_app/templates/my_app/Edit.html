@@ -1,0 +1,41 @@
+<html>
+    <head>
+      <style>
+        table, th, td {
+            border:1px solid black;
+            text-align:center;
+          }
+      </style>
+    </head>
+    <body>
+        <table>
+            <table style="width:100%">
+            <tr>
+                <th>Student_Name</th>
+                <th>Roll_No</th>
+                <th>Teacher</th>
+                <th>Subject</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+        {% for i in all %}  
+               <tr>
+                <td>{{i.student_name}}</td>
+                <td>{{i.roll_no}}</td>
+                <td>{{i.Teacher}}</td>
+                <td>{{i.Subject}}</td>
+                <form action="{% url "delete" i.id %}" method="POST" >
+                <td><input  type="submit" value = "Delete"></td>
+                </form>
+                <form action="{% url "Edit_1" i.id %}" method="POST" >
+                <td><input  type="submit" value = "Edit"></td>
+                </form>
+                </tr>
+        {% endfor %}   
+        
+        </table>
+    </body>
+</html>   
+
+
+

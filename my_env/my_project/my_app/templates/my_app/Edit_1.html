@@ -1,0 +1,14 @@
+<html>
+    <head>
+    </head>
+    <body>
+    <form class='form' method='POST' action="{% url "Edit_1" get.id %}"> 
+        <table>
+            {% csrf_token %}
+            {{form}}
+            {{forms}}
+        </table>
+    <input id = "submitbtn" type="submit" value = "submit">
+    </forms>
+    </body>
+</html>
